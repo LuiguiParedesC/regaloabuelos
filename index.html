@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una Sorpresa Para Nuestros Abuelos ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#ffdde1,#ee9ca7);
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    color:white;
+}
+
+h1{
+    margin-bottom:20px;
+    text-shadow:2px 2px 5px rgba(0,0,0,.2);
+}
+
+.gift-box{
+    width:180px;
+    height:180px;
+    background:#e63946;
+    margin:auto;
+    position:relative;
+    cursor:pointer;
+    transition:.8s;
+    border-radius:10px;
+}
+
+.gift-box:before{
+    content:"";
+    position:absolute;
+    width:30px;
+    height:180px;
+    background:#ffd166;
+    left:75px;
+}
+
+.lid{
+    position:absolute;
+    width:200px;
+    height:40px;
+    background:#c1121f;
+    left:-10px;
+    top:-25px;
+    border-radius:10px;
+    transition:1s;
+    transform-origin:left bottom;
+}
+
+.ribbon{
+    position:absolute;
+    width:50px;
+    height:50px;
+    border:8px solid #ffd166;
+    border-radius:50%;
+    top:-55px;
+    left:65px;
+}
+
+.open .lid{
+    transform:rotate(-120deg);
+}
+
+.hidden{
+    display:none;
+}
+
+.message{
+    max-width:800px;
+    padding:20px;
+    animation:fadeIn 2s ease;
+}
+
+.message img{
+    width:250px;
+    max-width:90%;
+    border-radius:20px;
+    margin:20px 0;
+    box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+
+.message p{
+    font-size:1.2rem;
+    line-height:1.6;
+}
+
+.gallery{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+.gallery img{
+    width:180px;
+    border-radius:15px;
+}
+
+@keyframes fadeIn{
+    from{opacity:0; transform:translateY(30px);}
+    to{opacity:1; transform:translateY(0);}
+}
+
+.confetti{
+    position:absolute;
+    width:10px;
+    height:10px;
+    top:-10px;
+    animation:fall 4s linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(720deg);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div id="giftSection">
+        <h1>🎁 Tenemos una sorpresa para ustedes ❤️</h1>
+
+        <div class="gift-box" id="giftBox">
+            <div class="lid"></div>
+            <div class="ribbon"></div>
+        </div>
+
+        <p style="margin-top:20px;">
+            Toquen la caja para abrir su regalo
+        </p>
+    </div>
+
+    <div id="messageSection" class="message hidden">
+
+        <h1>❤️ Queridos Abuelos ❤️</h1>
+
+        <!-- Cambia esta foto -->
+        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=800" alt="Familia">
+
+        <p>
+            Gracias por todo el amor, los consejos,
+            las historias, las risas y los recuerdos
+            que nos han regalado durante todos estos años.
+        </p>
+
+        <br>
+
+        <p>
+            Cada momento compartido con ustedes es un tesoro.
+            Esta pequeña sorpresa es una forma de decirles
+            cuánto los queremos y cuánto significan para toda la familia.
+        </p>
+
+        <br>
+
+        <h2>📸 Algunos recuerdos especiales</h2>
+
+        <div class="gallery">
+
+            <img src="https://picsum.photos/300/200?1">
+            <img src="https://picsum.photos/300/200?2">
+            <img src="https://picsum.photos/300/200?3">
+            <img src="https://picsum.photos/300/200?4">
+
+        </div>
+
+        <br><br>
+
+        <h2>💖 Con todo nuestro cariño</h2>
+
+        <p>
+            Sus hijos, nietos y toda la familia.
+        </p>
+
+    </div>
+
+</div>
+
+<script>
+
+const giftBox = document.getElementById("giftBox");
+const giftSection = document.getElementById("giftSection");
+const messageSection = document.getElementById("messageSection");
+
+giftBox.addEventListener("click", () => {
+
+    giftBox.classList.add("open");
+
+    launchConfetti();
+
+    setTimeout(() => {
+        giftSection.style.display = "none";
+        messageSection.classList.remove("hidden");
+    }, 1200);
+});
+
+function launchConfetti(){
+
+    for(let i=0;i<120;i++){
+
+        const confetti=document.createElement("div");
+
+        confetti.classList.add("confetti");
+
+        confetti.style.left=Math.random()*100+"vw";
+
+        confetti.style.background=
+            `hsl(${Math.random()*360},100%,50%)`;
+
+        confetti.style.animationDuration=
+            (2+Math.random()*3)+"s";
+
+        document.body.appendChild(confetti);
+
+        setTimeout(()=>{
+            confetti.remove();
+        },5000);
+    }
+}
+</script>
+
+</body>
+</html>
