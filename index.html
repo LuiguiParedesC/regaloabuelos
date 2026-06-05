@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Una Sorpresa Para Nuestros Abuelos ❤️</title>
+<title>Una Sorpresa Para Nuestros Papá y Mamá ❤️</title>
 
 <style>
 *{
@@ -18,13 +18,12 @@ body{
     min-height:100vh;
     overflow-y:auto;
 
-    /* ⭐ CENTRADO PERFECTO */
     display:flex;
     justify-content:center;
     align-items:center;
 }
 
-/* ⭐ CONTENEDOR CENTRADO */
+/* CONTENEDOR */
 .container{
     text-align:center;
     width:100%;
@@ -38,12 +37,12 @@ h1{
     text-shadow:2px 2px 5px rgba(0,0,0,.2);
 }
 
-/* ⭐ CAJA DE REGALO */
+/* CAJA REGALO */
 .gift-box{
     width:180px;
     height:180px;
     background:#e63946;
-    margin:0 auto; /* CENTRADO HORIZONTAL */
+    margin:0 auto;
     position:relative;
     cursor:pointer;
     transition:.8s;
@@ -97,7 +96,6 @@ h1{
     animation:fadeIn 2s ease;
 }
 
-/* IMÁGENES */
 .message img{
     width:250px;
     max-width:90%;
@@ -106,7 +104,6 @@ h1{
     box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
-/* TEXTO */
 .message p{
     font-size:1.2rem;
     line-height:1.7;
@@ -128,7 +125,7 @@ h1{
     border-radius:12px;
 }
 
-/* ANIMACIÓN MENSAJE */
+/* ANIMACIÓN */
 @keyframes fadeIn{
     from{opacity:0; transform:translateY(30px);}
     to{opacity:1; transform:translateY(0);}
@@ -148,6 +145,39 @@ h1{
         transform:translateY(110vh) rotate(720deg);
     }
 }
+
+/* ⭐ SECCIÓN FINAL */
+.regalo-texto{
+    margin-top:25px;
+    font-size:1.3rem;
+    font-weight:bold;
+    color:white;
+}
+
+.flechas{
+    font-size:2.5rem;
+    margin:10px 0;
+    animation:bounce 1.2s infinite;
+    color:white;
+}
+
+@keyframes bounce{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(8px);}
+}
+
+.avion{
+    width:140px;
+    margin-top:10px;
+    animation:floating 3s ease-in-out infinite;
+    filter: drop-shadow(0px 5px 10px rgba(0,0,0,0.3));
+}
+
+@keyframes floating{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
 </style>
 </head>
 
@@ -175,22 +205,15 @@ h1{
 
         <h1>❤️ Queridos Papá y Mamá ❤️</h1>
 
-        <img src="paseolaguna.jpeg" alt="Familia">
+        <img src="paseolaguna.jpeg">
 
         <p>
-            "¡Feliz aniversario, mamá y papá!
-            Han pasado por tantas cosas juntos y lo han hecho con tanta elegancia.
-            Su matrimonio es la razón por la que creo en la lealtad y en la compañía para toda la vida.
-            Son el pilar de nuestra familia y nuestro mayor ejemplo. ¡Los amo profundamente!"
+            ¡Feliz aniversario! Han construido una historia llena de amor, paciencia y unión.
+            Son nuestro mayor ejemplo de vida y familia.
         </p>
 
-        <br>
-
         <p>
-            "Papá, mamá, verlos celebrar su aniversario
-            llena mi corazón de una alegría inmensa.
-            El amor que han compartido a lo largo de las décadas es el hilo que ha unido a toda nuestra familia.
-            Gracias por su entrega absoluta y por construir un hogar tan lleno de cariño. ¡Feliz aniversario!"
+            Gracias por todo lo que nos han dado y por enseñarnos el verdadero significado del amor.
         </p>
 
         <br>
@@ -210,6 +233,17 @@ h1{
         <p>
             Sus hijos, nietos y toda la familia.
         </p>
+
+        <!-- ⭐ SECCIÓN NUEVA -->
+        <p class="regalo-texto">
+            Este es su regalo
+        </p>
+
+        <div class="flechas">
+            ↓ ↓ ↓
+        </div>
+
+        <img src="avion.png" class="avion" alt="Avión">
 
     </div>
 
