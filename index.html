@@ -13,27 +13,37 @@
 }
 
 body{
-   font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif;
     background: linear-gradient(135deg,#ffdde1,#ee9ca7);
     min-height:100vh;
     overflow-y:auto;
+
+    /* ⭐ CENTRADO PERFECTO */
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
+/* ⭐ CONTENEDOR CENTRADO */
 .container{
     text-align:center;
-    margin-top:60px;
+    width:100%;
+    max-width:900px;
+    padding:20px;
 }
 
+/* TÍTULO */
 h1{
     margin-bottom:20px;
     text-shadow:2px 2px 5px rgba(0,0,0,.2);
 }
 
+/* ⭐ CAJA DE REGALO */
 .gift-box{
     width:180px;
     height:180px;
     background:#e63946;
-    margin-top:20px;
+    margin:0 auto; /* CENTRADO HORIZONTAL */
     position:relative;
     cursor:pointer;
     transition:.8s;
@@ -75,16 +85,19 @@ h1{
     transform:rotate(-120deg);
 }
 
+/* OCULTO */
 .hidden{
     display:none;
 }
 
+/* MENSAJE */
 .message{
     max-width:800px;
     padding:20px;
     animation:fadeIn 2s ease;
 }
 
+/* IMÁGENES */
 .message img{
     width:250px;
     max-width:90%;
@@ -93,11 +106,13 @@ h1{
     box-shadow:0 10px 30px rgba(0,0,0,.3);
 }
 
+/* TEXTO */
 .message p{
     font-size:1.2rem;
-    line-height:1.6;
+    line-height:1.7;
 }
 
+/* GALERÍA */
 .gallery{
     display:flex;
     flex-wrap:wrap;
@@ -110,13 +125,16 @@ h1{
     width:200px;
     height:180px;
     object-fit:cover;
+    border-radius:12px;
 }
 
+/* ANIMACIÓN MENSAJE */
 @keyframes fadeIn{
     from{opacity:0; transform:translateY(30px);}
     to{opacity:1; transform:translateY(0);}
 }
 
+/* CONFETTI */
 .confetti{
     position:absolute;
     width:10px;
@@ -137,7 +155,9 @@ h1{
 
 <div class="container">
 
+    <!-- 🎁 CAJA INICIAL -->
     <div id="giftSection">
+
         <h1>🎁 Tenemos una sorpresa para ustedes ❤️</h1>
 
         <div class="gift-box" id="giftBox">
@@ -150,26 +170,26 @@ h1{
         </p>
     </div>
 
+    <!-- 💖 MENSAJE -->
     <div id="messageSection" class="message hidden">
 
         <h1>❤️ Queridos Papá y Mamá ❤️</h1>
 
-        
         <img src="paseolaguna.jpeg" alt="Familia">
 
         <p>
             "¡Feliz aniversario, mamá y papá!
-              Han pasado por tantas cosas juntos y lo han hecho con tanta elegancia.
-              Su matrimonio es la razón por la que creo en la lealtad y en la compañía para toda la vida.
-              Son el pilar de nuestra familia y nuestro mayor ejemplo. ¡Los amo profundamente!"
+            Han pasado por tantas cosas juntos y lo han hecho con tanta elegancia.
+            Su matrimonio es la razón por la que creo en la lealtad y en la compañía para toda la vida.
+            Son el pilar de nuestra familia y nuestro mayor ejemplo. ¡Los amo profundamente!"
         </p>
 
         <br>
 
         <p>
             "Papá, mamá, verlos celebrar su aniversario
-             llena mi corazón de una alegría inmensa.
-             El amor que han compartido a lo largo de las décadas es el hilo que ha unido a toda nuestra familia.
+            llena mi corazón de una alegría inmensa.
+            El amor que han compartido a lo largo de las décadas es el hilo que ha unido a toda nuestra familia.
             Gracias por su entrega absoluta y por construir un hogar tan lleno de cariño. ¡Feliz aniversario!"
         </p>
 
@@ -178,11 +198,9 @@ h1{
         <h2>📸 Algunos recuerdos especiales</h2>
 
         <div class="gallery">
-
             <img src="cenafamiliar.jpeg">
             <img src="comiendo.jpeg">
             <img src="paseo.jpeg">
-
         </div>
 
         <br><br>
@@ -238,6 +256,7 @@ function launchConfetti(){
         },5000);
     }
 }
+
 </script>
 
 </body>
